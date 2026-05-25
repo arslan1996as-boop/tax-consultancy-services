@@ -1,0 +1,27 @@
+// Welcome Message
+console.log("Website Loaded Successfully");
+
+// Smooth Scroll Effect
+document.querySelectorAll('nav a').forEach(anchor => {
+
+    anchor.addEventListener('click', function (e) {
+
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+
+        targetSection.scrollIntoView({
+            behavior: 'smooth'
+        });
+
+    });
+
+});
+
+// Simple Footer Year Auto Update
+const footer = document.querySelector("footer p");
+
+const currentYear = new Date().getFullYear();
+
+footer.innerHTML = `© ${currentYear} Amir Hussain - All Rights Reserved`;
